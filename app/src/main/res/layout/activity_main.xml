@@ -1,60 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#161026"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
+    \
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="12dp"
         android:text="¿Qué tenemos pendiente hoy?"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="12dp"/>
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Toca una tarea para descartarla"
-        android:textSize="14sp"
-        android:textColor="#666666"
-        android:layout_marginBottom="6dp"/>
+        android:layout_marginBottom="6dp"
+        android:text="Marca una tarea como completada o elimínala"
+        android:textColor="#8B8888"
+        android:textSize="16sp" />
 
     <ListView
-        android:id="@+id/Tasks"
+        android:id="@+id/lvTasks"
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_marginBottom="10dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="10dp"
-        android:choiceMode="multipleChoice" />
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="12dp">
+        android:layout_marginBottom="45dp"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnAddTask"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
             android:layout_weight="1"
-            android:text="Agregar Tarea"
-            android:layout_marginEnd="6dp"/>
+            android:backgroundTint="#42B4FF"
+            android:clipToOutline="true"
+            android:text="Agregar Tarea" />
+
 
         <Button
             android:id="@+id/btnGoToDiscarded"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
             android:layout_weight="1"
-            android:text="Tareas Descartadas"
-            android:backgroundTint="#757575"
-            android:layout_marginStart="6dp"/>
+            android:backgroundTint="#8B8888"
+            android:text="Tareas Descartadas" />
     </LinearLayout>
 
 </LinearLayout>

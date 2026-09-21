@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class DiscardedTasksActivity : AppCompatActivity() {
 
-    private lateinit var adapter: ArrayAdapter<String>
+    private lateinit var adapter: ArrayAdapter<TaskItem>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class DiscardedTasksActivity : AppCompatActivity() {
         // Restaurar tarea al hacer clic
         lvDiscardedTasks.setOnItemClickListener { _, _, position, _ ->
             val task = TaskRepository.discardedTasks[position]
-            TaskRepository.currentTasks.add(task.replace("❌", "📌"))
+            TaskRepository.currentTasks.add(TaskItem(task.text.replace("❌", "📌")))
             TaskRepository.discardedTasks.removeAt(position)
             adapter.notifyDataSetChanged()
         }
