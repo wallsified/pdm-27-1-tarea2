@@ -7,6 +7,8 @@
     android:background="#161026"
     android:orientation="vertical"
     android:padding="16dp"
+    android:layout_margin="3dp"
+    android:clipToOutline="true"
     tools:context=".MainActivity">
     \
 

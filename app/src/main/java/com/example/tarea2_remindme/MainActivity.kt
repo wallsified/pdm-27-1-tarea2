@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         adapter = TaskAdapter(this, TaskRepository.currentTasks) { position ->
             val taskItem = TaskRepository.currentTasks[position]
-            TaskRepository.discardedTasks.add(TaskItem(taskItem.text.replace("📌", "❌")))
+            TaskRepository.discardedTasks.add(TaskItem(taskItem.text))
             TaskRepository.currentTasks.removeAt(position)
             adapter.notifyDataSetChanged()
         }
@@ -33,14 +33,14 @@ class MainActivity : AppCompatActivity() {
         // Agregar tarea
         btnAddTask.setOnClickListener {
             val input = EditText(this)
-            input.hint = "Escribe tu tarea aquí..."
+            input.hint = "    Escribe tu tarea aquí..."
             AlertDialog.Builder(this)
                 .setTitle("Nueva Tarea")
                 .setView(input)
                 .setPositiveButton("Añadir") { _, _ ->
                     val text = input.text.toString()
                     if (text.isNotEmpty()) {
-                        TaskRepository.currentTasks.add(TaskItem("📌 $text"))
+                        TaskRepository.currentTasks.add(TaskItem(text))
                         adapter.notifyDataSetChanged()
                     }
                 }.setNegativeButton("Cancelar", null).show()
