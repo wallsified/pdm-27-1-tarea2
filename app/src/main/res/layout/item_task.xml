@@ -3,37 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="12dp"
+    android:background="#F0161026"
     android:gravity="center_vertical"
-    android:background="#F0161026">
+    android:orientation="horizontal"
+    android:padding="12dp">
 
     <CheckBox
         android:id="@+id/cbTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:focusable="false"
-        android:clickable="true"
         android:buttonTint="#00E582"
-        android:drawablePadding="3dp"/>
+        android:clickable="true"
+        android:drawablePadding="3dp"
+        android:focusable="false" />
 
     <TextView
         android:id="@+id/tvTaskText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
         android:layout_weight="1"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp" />
+        android:textSize="20sp" />
 
     <ImageButton
         android:id="@+id/btnDeleteTask"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@android:drawable/ic_menu_delete"
         android:contentDescription="Eliminar tarea"
-        app:tint="#FF57E9"
-        android:focusable="false" />
+        android:focusable="false"
+        android:src="@android:drawable/ic_menu_delete"
+        app:tint="#FF57E9" />
 </LinearLayout>
